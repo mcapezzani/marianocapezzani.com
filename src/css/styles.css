@@ -106,14 +106,52 @@ h3 {
 }
 
 h2 a,
-h3 a {
+h3 a,
+.prose h2 a,
+.prose h3 a,
+.post h2 a,
+.post h3 a,
+.card h2 a,
+.card h3 a,
+.edu h2 a,
+.edu h3 a {
   color: inherit;
+  font-weight: inherit;
   text-decoration: none;
 }
 
 h2 a:hover,
-h3 a:hover {
+h3 a:hover,
+.prose h2 a:hover,
+.prose h3 a:hover,
+.post h2 a:hover,
+.post h3 a:hover,
+.card h2 a:hover,
+.card h3 a:hover,
+.edu h2 a:hover,
+.edu h3 a:hover {
   text-decoration: underline;
+}
+
+.album-copy,
+.card-copy,
+.post {
+  position: relative;
+}
+
+a.block-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.album-copy .badges,
+.album-copy .mini-row,
+.card-copy p > a,
+.post > a,
+.post p > a {
+  position: relative;
+  z-index: 1;
 }
 
 :focus-visible {
@@ -398,7 +436,7 @@ h3 a:hover {
 
 .subtitle {
   color: var(--muted);
-  text-align: center;
+  text-align: left;
   margin-top: -8px;
 }
 
@@ -476,7 +514,7 @@ h3 a:hover {
   height: 93px;
   object-fit: contain;
   display: block;
-  margin: 0 auto 16px;
+  margin: 0 0 16px;
 }
 
 .edu-photos {
@@ -495,7 +533,7 @@ h3 a:hover {
 .cox-logo {
   display: block;
   width: min(276px, 70%);
-  margin: 8px auto 16px;
+  margin: 8px 0 16px;
 }
 
 .pair {
@@ -580,7 +618,7 @@ h3 a:hover {
   list-style: none;
   padding: 0;
   margin: 8px 0 0;
-  text-align: center;
+  text-align: left;
 }
 
 .disco-index li {
@@ -603,6 +641,13 @@ h3 a:hover {
   gap: 28px;
   align-items: center;
   margin-bottom: 8px;
+}
+
+.product-head > a {
+  display: block;
+  flex: none;
+  line-height: 0;
+  text-decoration: none;
 }
 
 .product-head img {
@@ -820,7 +865,7 @@ h3 a:hover {
 
 .contact-form {
   max-width: 488px;
-  margin: 12px auto 8px;
+  margin: 12px 0 8px;
 }
 
 .contact-form label {
@@ -994,17 +1039,19 @@ h3 a:hover {
 
   .product-head {
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .reach {
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
     gap: 20px;
   }
 
   .reach-social {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .shots img,

@@ -59,7 +59,7 @@ Pushes to `main` run `.github/workflows/pages.yml`, which builds the site and de
 
 ## Content notes kept on purpose
 
-- Home says “Rendez-vous with Rama. **2026.**” and Music says “**2025?.**”. Both are copied as written.
+- Home and Music both say “Rendez-vous with Rama. **2027.**”.
 - Typos in the original copy are unchanged (“Theer are”, “sounstrack”, “Dissapointing”, and others).
 - The Chase icon on Work still links to the Shopmate section. There is no Chase section on the live site, so the target was left as it is.
 - The Home heading “Space” still links to the Prototypr article “Apps for martians”. That may be unintentional; the right destination is not clear.
