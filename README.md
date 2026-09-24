@@ -2,7 +2,7 @@
 
 Static rebuild of [mcapezzani4.wixsite.com/website](https://mcapezzani4.wixsite.com/website). Five pages: Home, Work, Blog, Music, Me. Plain HTML and CSS, generated with [Eleventy](https://www.11ty.dev/), deployed to GitHub Pages.
 
-Preview: https://mcapezzani.github.io/marianocapezzani.com/
+Site: https://marianocapezzani.com/
 
 ## Edit the site
 
@@ -22,33 +22,24 @@ npm run dev    # local preview
 npm run build  # writes _site/
 ```
 
-The dev server respects the base path in `src/_data/site.js`, so local links match the GitHub Pages project URL.
+The dev server respects the base path in `src/_data/site.js`. With the constants below, local links match the custom domain at the root.
 
 ## Base path and the custom domain
 
-All links and assets are prefixed from one file, `src/_data/site.js`.
-
-Today the site is served from a project URL, so:
-
-```js
-const BASE_PATH = "/marianocapezzani.com";
-const SITE_URL = "https://mcapezzani.github.io/marianocapezzani.com";
-```
-
-When `marianocapezzani.com` is pointed at GitHub Pages, change those two lines to:
+All links, asset URLs, canonical URLs, Open Graph URLs, `sitemap.xml`, and `robots.txt` come from one file, `src/_data/site.js`:
 
 ```js
 const BASE_PATH = "";
 const SITE_URL = "https://marianocapezzani.com";
 ```
 
-Then add a `CNAME` file in the repo root whose only line is:
+`src/static/CNAME` contains `marianocapezzani.com` and is copied to the root of the published site. GitHub Pages uses that file for the custom domain. Set Pages → Custom domain to `marianocapezzani.com` when this is deployed. With the CNAME in the published output, GitHub redirects the old project URL to the custom domain.
 
-```
-marianocapezzani.com
-```
+To build a project-URL preview instead, override the constants for that build:
 
-Do not add `CNAME` before the DNS records point at GitHub. With a `CNAME` file present, GitHub redirects the project URL to the custom domain, and the preview would break until DNS is live. In the repository settings, set Pages → Custom domain to `marianocapezzani.com` at the same time.
+```bash
+BASE_PATH=/marianocapezzani.com SITE_URL=https://mcapezzani.github.io/marianocapezzani.com npm run build
+```
 
 ## Contact form
 
