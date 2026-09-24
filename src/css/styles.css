@@ -106,14 +106,52 @@ h3 {
 }
 
 h2 a,
-h3 a {
+h3 a,
+.prose h2 a,
+.prose h3 a,
+.post h2 a,
+.post h3 a,
+.card h2 a,
+.card h3 a,
+.edu h2 a,
+.edu h3 a {
   color: inherit;
+  font-weight: inherit;
   text-decoration: none;
 }
 
 h2 a:hover,
-h3 a:hover {
+h3 a:hover,
+.prose h2 a:hover,
+.prose h3 a:hover,
+.post h2 a:hover,
+.post h3 a:hover,
+.card h2 a:hover,
+.card h3 a:hover,
+.edu h2 a:hover,
+.edu h3 a:hover {
   text-decoration: underline;
+}
+
+.album-copy,
+.card-copy,
+.post {
+  position: relative;
+}
+
+a.block-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.album-copy .badges,
+.album-copy .mini-row,
+.card-copy p > a,
+.post > a,
+.post p > a {
+  position: relative;
+  z-index: 1;
 }
 
 :focus-visible {
