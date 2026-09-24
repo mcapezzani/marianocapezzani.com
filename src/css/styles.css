@@ -641,8 +641,8 @@ h3 a:hover {
 .shots video {
   width: 150px;
   height: auto;
-  background: #111;
   display: block;
+  background: #1a1a1a;
 }
 
 .shots.shots-lg img,
@@ -652,6 +652,7 @@ h3 a:hover {
 
 .shots video {
   object-fit: cover;
+  aspect-ratio: 9 / 16;
 }
 
 .desk-shots {

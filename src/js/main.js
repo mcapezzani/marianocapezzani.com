@@ -47,10 +47,31 @@
     });
   }
 
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    document.querySelectorAll("video").forEach(function (video) {
+  var motionReduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll("video").forEach(function (video) {
+    video.muted = true;
+    video.defaultMuted = true;
+    video.setAttribute("playsinline", "");
+    video.playsInline = true;
+    if (motionReduce) {
       video.removeAttribute("autoplay");
       video.pause();
-    });
-  }
+      return;
+    }
+    var start = function () {
+      var play = video.play();
+      if (play && play.catch) play.catch(function () {});
+    };
+    if ("IntersectionObserver" in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) start();
+          else video.pause();
+        });
+      }, { threshold: 0.2 });
+      observer.observe(video);
+    } else {
+      start();
+    }
+  });
 })();
