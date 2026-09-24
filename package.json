@@ -1,0 +1,15 @@
+{
+  "name": "marianocapezzani",
+  "private": true,
+  "description": "Personal site for Mariano Capezzani, built as a static site for GitHub Pages.",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

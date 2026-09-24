@@ -1,0 +1,50 @@
+---
+layout: base.njk
+title: Mariano Capezzani
+description: I'm easy to reach
+pageId: me
+canonicalPath: /me/
+---
+
+<section class="band band--grey">
+  <div class="reach">
+    <img class="profile" src="{{ '/assets/images/profile-photo.webp' | url }}" alt="Mariano Capezzani" width="224" height="224">
+    <div>
+      <h2>I'm easy to reach.</h2>
+      <div class="reach-social">
+        {% for item in site.social %}
+        <a href="{{ item.url }}" aria-label="{{ item.name }}" target="_blank" rel="noopener noreferrer">
+          <img src="{{ ('/assets/images/' + item.icon) | url }}" alt="" width="51" height="51">
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if site.formspreeEndpoint %}
+<section class="band">
+  <div class="wrap">
+    <h2 class="center">Or send a message 👇🏻...</h2>
+    <form class="contact-form" action="{{ site.formspreeEndpoint }}" method="POST">
+      <label>First Name
+        <input type="text" name="first-name" maxlength="100" autocomplete="given-name">
+      </label>
+      <label>Last Name
+        <input type="text" name="last-name" maxlength="100" autocomplete="family-name">
+      </label>
+      <label>Email *
+        <input type="email" name="email" maxlength="250" required autocomplete="email">
+      </label>
+      <label>Message
+        <textarea name="message"></textarea>
+      </label>
+      <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button type="submit">Send</button>
+      <p class="form-status" hidden>Thanks!</p>
+    </form>
+  </div>
+</section>
+{% endif %}
+
+<iframe class="map" title="Map of London" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.2894%2C51.4672%2C-0.0425%2C51.6211&amp;layer=mapnik&amp;marker=51.544166%2C-0.165941"></iframe>
