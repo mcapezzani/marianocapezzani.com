@@ -643,6 +643,13 @@ a.block-link::after {
   margin-bottom: 8px;
 }
 
+.product-head > a {
+  display: block;
+  flex: none;
+  line-height: 0;
+  text-decoration: none;
+}
+
 .product-head img {
   width: 147px;
   height: 147px;
