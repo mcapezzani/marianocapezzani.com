@@ -436,7 +436,7 @@ a.block-link::after {
 
 .subtitle {
   color: var(--muted);
-  text-align: center;
+  text-align: left;
   margin-top: -8px;
 }
 
@@ -514,7 +514,7 @@ a.block-link::after {
   height: 93px;
   object-fit: contain;
   display: block;
-  margin: 0 auto 16px;
+  margin: 0 0 16px;
 }
 
 .edu-photos {
@@ -533,7 +533,7 @@ a.block-link::after {
 .cox-logo {
   display: block;
   width: min(276px, 70%);
-  margin: 8px auto 16px;
+  margin: 8px 0 16px;
 }
 
 .pair {
@@ -618,7 +618,7 @@ a.block-link::after {
   list-style: none;
   padding: 0;
   margin: 8px 0 0;
-  text-align: center;
+  text-align: left;
 }
 
 .disco-index li {
@@ -858,7 +858,7 @@ a.block-link::after {
 
 .contact-form {
   max-width: 488px;
-  margin: 12px auto 8px;
+  margin: 12px 0 8px;
 }
 
 .contact-form label {
@@ -1032,17 +1032,19 @@ a.block-link::after {
 
   .product-head {
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .reach {
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
     gap: 20px;
   }
 
   .reach-social {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .shots img,
