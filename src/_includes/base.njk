@@ -65,7 +65,11 @@
       </a>
       {% endfor %}
     </div>
+    {% if pageId == "home" %}
+    <p>© 2026 Mariano Capezzani</p>
+    {% else %}
     <p>©2023 MARIANO CAPEZZANI</p>
+    {% endif %}
   </footer>
   <script src="{{ '/js/main.js' | url }}"></script>
 </body>
