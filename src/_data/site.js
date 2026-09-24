@@ -1,24 +1,24 @@
 /**
  * Site configuration — edit the three constants below.
  *
- * Preview on GitHub Pages (project URL, a subpath):
- *   basePath: "/marianocapezzani.com"
- *   siteUrl:  "https://mcapezzani.github.io/marianocapezzani.com"
- *
- * Later, when marianocapezzani.com points at GitHub Pages, switch to the root:
+ * The site is published at the custom domain, from the root:
  *   basePath: ""
  *   siteUrl:  "https://marianocapezzani.com"
- *   and add a CNAME file whose only line is: marianocapezzani.com
- * Do not add that CNAME file until DNS is actually pointed here. A CNAME
- * makes GitHub redirect the project URL to the custom domain.
+ * src/static/CNAME is copied into the published site root. GitHub Pages
+ * reads that file and serves the site at marianocapezzani.com.
+ *
+ * A project-URL preview (https://mcapezzani.github.io/marianocapezzani.com/)
+ * can still be built by setting the environment variables:
+ *   BASE_PATH=/marianocapezzani.com
+ *   SITE_URL=https://mcapezzani.github.io/marianocapezzani.com
  *
  * Contact form: set formspreeEndpoint to a Formspree form URL
  * (https://formspree.io/f/xxxxxxxx) to show the form on /me.
  * Leave it empty and the page shows the social links only — no broken form,
  * and no personal email address is published.
  */
-const BASE_PATH = "/marianocapezzani.com";
-const SITE_URL = "https://mcapezzani.github.io/marianocapezzani.com";
+const BASE_PATH = "";
+const SITE_URL = "https://marianocapezzani.com";
 const FORMSPREE_ENDPOINT = "";
 
 function cleanBase(value) {
