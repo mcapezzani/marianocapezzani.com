@@ -259,15 +259,9 @@ body.page-home section[id] {
   letter-spacing: -0.02em;
 }
 
-body.page-home .home-break .asterisk,
-body.page-home .home-break .chapter-label {
-  font-family: var(--home-font);
-  font-weight: 600;
-  font-size: 22px;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  display: inline;
-  margin: 0;
+.chapter-glue {
+  white-space: nowrap;
+  letter-spacing: 0;
 }
 
 body.page-home .home-break .chapter-words {
