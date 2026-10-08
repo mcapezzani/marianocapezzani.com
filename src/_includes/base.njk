@@ -45,7 +45,14 @@
       <div class="header-social">
         {% for item in site.social %}
         <a href="{{ item.url }}" aria-label="{{ item.name }}" target="_blank" rel="noopener noreferrer">
+          {% if pageId == "home" %}
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="{{ ('/assets/images/' + item.iconColor) | url }}">
+            <img src="{{ ('/assets/images/' + item.icon) | url }}" alt="" width="23" height="23">
+          </picture>
+          {% else %}
           <img src="{{ ('/assets/images/' + item.icon) | url }}" alt="" width="23" height="23">
+          {% endif %}
         </a>
         {% endfor %}
       </div>
@@ -61,15 +68,11 @@
     <div class="footer-social">
       {% for item in site.social %}
       <a href="{{ item.url }}" aria-label="{{ item.name }}" target="_blank" rel="noopener noreferrer">
-        <img src="{{ ('/assets/images/' + item.icon) | url }}" alt="" width="27" height="27">
+        <img src="{{ ('/assets/images/' + item.iconColor) | url }}" alt="" width="27" height="27">
       </a>
       {% endfor %}
     </div>
-    {% if pageId == "home" %}
     <p>© 2026 Mariano Capezzani</p>
-    {% else %}
-    <p>©2023 MARIANO CAPEZZANI</p>
-    {% endif %}
   </footer>
   <script src="{{ '/js/main.js' | url }}"></script>
 </body>
