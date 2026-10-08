@@ -617,11 +617,17 @@ body.page-home .nowrap {
   white-space: nowrap;
 }
 
-.home-section--chapter > .home-wrap {
-  border-top: 1px solid var(--home-line);
-  padding-top: 56px;
-}
-
-.home-section--chapter {
-  padding-top: 40px;
+body.page-home .home-section-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+  font-family: var(--home-font);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  color: var(--home-muted);
 }
