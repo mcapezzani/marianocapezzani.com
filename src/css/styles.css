@@ -1087,3 +1087,7 @@ a.block-link::after {
     scroll-behavior: auto;
   }
 }
+
+.reach h2 .nowrap {
+  white-space: nowrap;
+}
