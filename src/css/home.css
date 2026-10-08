@@ -136,6 +136,7 @@ body.page-home h1 {
   letter-spacing: -0.03em;
   max-width: 12em;
   margin: 0 0 32px;
+  text-wrap: balance;
 }
 
 body.page-home h2 {
@@ -614,4 +615,8 @@ body.page-home .home-break .chapter-words {
   body.page-home .home-cox {
     padding: 6px;
   }
+}
+
+body.page-home .nowrap {
+  white-space: nowrap;
 }
