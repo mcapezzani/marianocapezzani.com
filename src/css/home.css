@@ -596,14 +596,10 @@ body.page-home .home-break .chapter-words {
   body.page-home .home-cox,
   body.page-home .home-logos img,
   body.page-home .home-tools img,
-  body.page-home .home-streams a,
-  body.page-home .header-social a,
-  body.page-home .footer-social a {
+  body.page-home .home-streams a {
     background: #f4f1ea;
   }
 
-  body.page-home .header-social a,
-  body.page-home .footer-social a,
   body.page-home .home-streams a {
     border-radius: 999px;
     line-height: 0;

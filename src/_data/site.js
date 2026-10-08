@@ -44,26 +44,31 @@ module.exports = {
       name: "Twitter",
       url: "https://twitter.com/mcapezzani",
       icon: "social-twitter.webp",
+      iconColor: "social-color-twitter.svg",
     },
     {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/marianocapezzani/",
       icon: "social-linkedin.webp",
+      iconColor: "social-color-linkedin.svg",
     },
     {
       name: "SoundCloud",
       url: "https://soundcloud.com/mcapezzani",
       icon: "social-soundcloud.webp",
+      iconColor: "social-color-soundcloud.svg",
     },
     {
       name: "Spotify",
       url: "https://open.spotify.com/artist/6CEige5k9gP8PidwvdjEnm",
       icon: "social-spotify.webp",
+      iconColor: "social-color-spotify.svg",
     },
     {
       name: "Apple Music",
       url: "https://music.apple.com/us/artist/mariano-capezzani/1465284336",
       icon: "social-apple-music.webp",
+      iconColor: "social-color-apple-music.svg",
     },
   ],
 };
