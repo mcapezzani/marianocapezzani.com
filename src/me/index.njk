@@ -14,7 +14,10 @@ canonicalPath: /me/
       <div class="reach-social">
         {% for item in site.social %}
         <a href="{{ item.url }}" aria-label="{{ item.name }}" target="_blank" rel="noopener noreferrer">
-          <img src="{{ ('/assets/images/' + item.icon) | url }}" alt="" width="51" height="51">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="{{ ('/assets/images/' + item.iconColor) | url }}">
+            <img src="{{ ('/assets/images/' + item.icon) | url }}" alt="" width="51" height="51">
+          </picture>
         </a>
         {% endfor %}
       </div>
