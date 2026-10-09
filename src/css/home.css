@@ -197,7 +197,7 @@ body.page-home section[id] {
 }
 
 .home-hero {
-  padding: 72px 0 56px;
+  padding: 72px 0 28px;
 }
 
 .home-disciplines {
@@ -517,7 +517,7 @@ body.page-home .home-break .chapter-words {
   }
 
   .home-hero {
-    padding: 40px 0 32px;
+    padding: 40px 0 20px;
   }
 
   .home-columns,
