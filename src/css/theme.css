@@ -278,3 +278,11 @@ body .site-footer p {
     gap: 24px 16px;
   }
 }
+
+.prose .home-products {
+  margin-bottom: 40px;
+}
+
+.prose .timeline-title {
+  margin-top: 8px;
+}
