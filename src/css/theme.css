@@ -214,3 +214,10 @@ body .site-footer p {
     background: #4a666b;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .map {
+    filter: invert(0.92) hue-rotate(180deg) brightness(0.95) contrast(0.9);
+    border-color: var(--home-line);
+  }
+}
