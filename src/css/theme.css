@@ -282,3 +282,7 @@ body .site-footer p {
 .prose .home-products {
   margin-bottom: 40px;
 }
+
+.prose .timeline-title {
+  margin-top: 8px;
+}
