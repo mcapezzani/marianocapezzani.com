@@ -28,39 +28,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,700;1,6..12,300&family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   {% endif %}
   <link rel="stylesheet" href="{{ '/css/styles.css' | url }}">
+  <link rel="stylesheet" href="{{ '/css/theme.css' | url }}">
   {% if pageId == "home" %}
   <link rel="stylesheet" href="{{ '/css/home.css' | url }}">
   {% endif %}
 </head>
 <body class="page-{{ pageId }}">
   <a class="skip" href="#content">Skip to content</a>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="logo" href="{{ '/' | url }}">Mariano Capezzani</a>
-      <nav class="nav" id="site-nav" aria-label="Primary">
-        {% for item in site.nav %}
-        <a href="{{ item.href | url }}" {% if item.id == pageId %}aria-current="page"{% endif %}>{{ item.label }}</a>
-        {% endfor %}
-      </nav>
-      <div class="header-social">
-        {% for item in site.social %}
-        <a href="{{ item.url }}" aria-label="{{ item.name }}" target="_blank" rel="noopener noreferrer">
-          {% if pageId == "home" %}
-          <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="{{ ('/assets/images/' + item.iconColor) | url }}">
-            <img src="{{ ('/assets/images/' + item.icon) | url }}" alt="" width="23" height="23">
-          </picture>
-          {% else %}
-          <img src="{{ ('/assets/images/' + item.icon) | url }}" alt="" width="23" height="23">
-          {% endif %}
-        </a>
-        {% endfor %}
-      </div>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+  {% include "site-header.njk" %}
   <main id="content">
     {{ content | safe }}
   </main>

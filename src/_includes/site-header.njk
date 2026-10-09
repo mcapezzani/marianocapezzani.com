@@ -1,0 +1,24 @@
+{# Shared top bar for every page. Active link: aria-current on the item matching pageId. #}
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="{{ '/' | url }}">Mariano Capezzani</a>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        {% for item in site.nav %}
+        <a href="{{ item.href | url }}" {% if item.id == pageId %}aria-current="page"{% endif %}>{{ item.label }}</a>
+        {% endfor %}
+      </nav>
+      <div class="header-social">
+        {% for item in site.social %}
+        <a href="{{ item.url }}" aria-label="{{ item.name }}" target="_blank" rel="noopener noreferrer">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="{{ ('/assets/images/' + item.iconColor) | url }}">
+            <img src="{{ ('/assets/images/' + item.icon) | url }}" alt="" width="23" height="23">
+          </picture>
+        </a>
+        {% endfor %}
+      </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>

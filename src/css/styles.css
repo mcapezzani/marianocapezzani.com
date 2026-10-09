@@ -1107,3 +1107,8 @@ a.block-link::after {
   display: block;
   line-height: 0;
 }
+
+.reach-social picture {
+  display: block;
+  line-height: 0;
+}
