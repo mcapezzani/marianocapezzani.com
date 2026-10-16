@@ -455,3 +455,68 @@ body.page-home .home-section-words {
   line-height: 1.4;
   color: var(--home-muted);
 }
+
+/* Centred large media: photo first, caption, then text */
+.home-hero-media {
+  margin: 12px auto 32px;
+  max-width: 960px;
+  text-align: center;
+}
+.home-media-main { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.home-media-main > a { display: block; width: 100%; }
+.home-media-main img { display: block; width: 100%; height: auto; border-radius: 10px; }
+.home-media-main > img { width: 246px; max-width: 50%; opacity: .9; }
+.home-hero-media figcaption {
+  margin: 14px auto 0;
+  max-width: 42em;
+  color: var(--home-muted);
+  font-size: 16px;
+}
+.home-media-text { display: block; }
+.home-hero-media .home-pair {
+  display: flex; flex-wrap: nowrap; justify-content: center; align-items: stretch;
+  gap: 16px; margin: 0;
+}
+.home-hero-media .home-pair img { height: auto; border-radius: 10px; display: block; min-width: 0; }
+.home-hero-media .home-pair img:first-child { width: auto; flex: 128 1 0; }
+.home-hero-media .home-pair img:last-child { width: auto; flex: 405 1 0; }
+
+/* CD-style album covers */
+.home-album { grid-template-columns: 300px 1fr; gap: 72px; align-items: center; }
+.home-album-solo { grid-template-columns: 1fr; }
+.home-cd {
+  position: relative; display: block; width: 280px; aspect-ratio: 1;
+  isolation: isolate; transition: transform .3s ease;
+}
+.home-cd::before {
+  content: ""; position: absolute; z-index: -1; top: 4%; left: 30%;
+  width: 92%; aspect-ratio: 1; border-radius: 50%;
+  background:
+    radial-gradient(circle, transparent 0 6.5%, rgba(0,0,0,.35) 6.5% 7.2%, #d9dce1 7.2% 15%, rgba(255,255,255,.55) 15% 15.6%, transparent 15.6%),
+    conic-gradient(from 30deg, rgba(255,120,180,.28), rgba(120,200,255,.32), rgba(160,255,190,.28), rgba(255,230,120,.3), rgba(255,120,180,.28)),
+    conic-gradient(from 0deg, #bfc3c9, #f4f5f7, #a9adb4, #eef0f2, #b6bac0, #f4f5f7, #bfc3c9);
+  -webkit-mask: radial-gradient(circle, transparent 0 6.5%, #000 6.6%);
+          mask: radial-gradient(circle, transparent 0 6.5%, #000 6.6%);
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+  transition: transform .45s cubic-bezier(.2,.7,.2,1);
+}
+.home-cd::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: 3px;
+  background: linear-gradient(90deg, rgba(255,255,255,.35) 0 1.5%, rgba(0,0,0,.25) 1.5% 2.6%, rgba(255,255,255,.12) 2.6% 3.2%, transparent 3.2%),
+              linear-gradient(135deg, rgba(255,255,255,.18), transparent 40%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.18);
+}
+.home-album .home-cd .cover {
+  width: 100%; height: 100%; object-fit: cover; border-radius: 3px;
+  box-shadow: 0 14px 30px rgba(0,0,0,.28), 0 2px 6px rgba(0,0,0,.2);
+}
+.home-cd:hover::before { transform: translateX(8%) rotate(40deg); }
+@media (prefers-color-scheme: dark) {
+  .home-album .home-cd .cover { box-shadow: 0 14px 34px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.06); }
+  .home-cd::before { filter: brightness(.88); box-shadow: 0 6px 22px rgba(0,0,0,.6); }
+}
+@media (max-width: 860px) {
+  .home-album { grid-template-columns: 1fr; gap: 24px; }
+  .home-cd { width: 62%; margin: 8px 0 0; }
+  .home-hero-media .home-pair { gap: 10px; }
+}
